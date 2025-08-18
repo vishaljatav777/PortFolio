@@ -1,0 +1,80 @@
+/* -- Main Testimonials Section Styling (Light Theme) -- */
+.testimonials-section {
+  padding: 5rem 5%;
+  background-color: #f8f9fa; /* Off-white background */
+}
+
+/* NOTE: The .section-title class is in your global stylesheet */
+
+/* -- Testimonials Grid -- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* -- Individual Testimonial Card -- */
+.testimonial-card {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.quote-icon {
+  font-size: 2.5rem;
+  color: #6f42c1; /* Violet accent */
+  opacity: 0.5;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #495057;
+  font-style: italic;
+  margin: 0;
+  flex-grow: 1; /* Pushes the author to the bottom */
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.author-image img, .author-placeholder {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-placeholder {
+  background-color: #e9ecef;
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #212529;
+}
+
+.author-title {
+  font-size: 0.9rem;
+  color: #6c757d;
+}

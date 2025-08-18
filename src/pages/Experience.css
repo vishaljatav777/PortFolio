@@ -1,0 +1,130 @@
+/* -- Main Experience Section Styling (Light Theme) -- */
+.experience-section {
+  padding: 5rem 5%;
+  background-color: #ffffff; /* White background */
+  color: #212529;
+}
+
+/* NOTE: The .section-title class is now in your global stylesheet (index.css or App.css),
+   so it has been removed from this file to avoid repetition.
+*/
+
+/* -- Timeline Container -- */
+.experience-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* The central vertical line of the timeline */
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background-color: #dee2e6; /* Light gray line */
+}
+
+/* -- Individual Timeline Item -- */
+.experience-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 50px;
+}
+
+.experience-dot-container {
+  position: absolute;
+  left: 0;
+  top: 5px; /* Align dot with card title */
+}
+
+.experience-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff;
+  border: 2px solid #6f42c1; /* Violet accent color */
+  border-radius: 50%;
+  color: #6f42c1;
+  font-size: 1.2rem;
+  z-index: 1;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* -- Experience Content Card -- */
+.experience-content-card {
+  background-color: #f8f9fa; /* Off-white card for contrast */
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #6f42c1; /* Violet accent border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effects for the whole item */
+.experience-item:hover .experience-content-card {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item:hover .experience-dot {
+  background-color: #6f42c1;
+  color: #ffffff;
+}
+
+.experience-content-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #212529;
+}
+
+.experience-details {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+.company-name {
+  font-weight: 500;
+  color: #495057;
+}
+
+.experience-date {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.experience-description {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.experience-description li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+/* -- Responsive Styles -- */
+@media (max-width: 768px) {
+  .experience-timeline::before {
+    left: 10px;
+  }
+  .experience-item {
+    padding-left: 40px;
+  }
+  .experience-dot {
+    width: 28px;
+    height: 28px;
+    margin-left: -4px;
+  }
+}

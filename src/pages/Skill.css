@@ -1,0 +1,98 @@
+/* -- Main Skill Section Styling (Light Theme) -- */
+.skill-section {
+  padding: 5rem 5%;
+  background-color: #f8f9fa; /* Light gray background */
+  color: #212529; /* Dark text */
+}
+
+/* NOTE: The .section-title class is now in your global stylesheet (index.css or App.css),
+   so it has been removed from this file to avoid repetition.
+*/
+
+/* -- Skills Grid Container -- */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* -- Skill Category Card -- */
+.skill-category-card {
+  background-color: #ffffff; /* White cards */
+  padding: 2.5rem; /* More padding */
+  border-radius: 12px;
+  border: 1px solid #dee2e6; /* Light gray border */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-color: #6f42c1; /* Violet accent on hover */
+}
+
+.skill-category-card h3 {
+  font-size: 1.6rem;
+  color: #6f42c1; /* Violet accent color */
+  margin-bottom: 2rem;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* -- Individual Skill Item -- */
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #e9ecef; /* Light gray background for skill pills */
+  color: #495057;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  background-color: #6f42c1;
+  color: #ffffff;
+}
+
+.skill-icon {
+  font-size: 1.5rem;
+}
+
+/* The icon colors will provide a nice pop of color on the light theme */
+.html { color: #E34F26; }
+.css { color: #1572B6; }
+.js { color: #F7DF1E; }
+.react { color: #61DAFB; }
+.node { color: #339933; }
+.express { color: #8a8a8a; }
+.mongo { color: #47A248; }
+.git { color: #F05032; }
+.figma { color: #F24E1E; }
+.postman { color: #FF6C37; }
+
+/* --- Add these new icon colors to Skill.css --- */
+
+.java { color: #f89820; }
+.typescript { color: #007acc; }
+.tailwind { color: #38bdf8; }
+.mysql { color: #00758f; }
+.docker { color: #0db7ed; }
+.github { color: #181717; } /* Use #ffffff in dark mode if needed */
+.c { color: #a8b9cc; }
+
+/* Colors for concept icons */
+.restapi { color: #f89820; }
+.ds { color: #a985e6; }
+.oop { color: #38bdf8; }
