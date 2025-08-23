@@ -5,7 +5,7 @@ import calculatorImage from '../ProjectIMG/calculater.png';
 import Portfolio from '../ProjectIMG/portfolio.png';
 import Wheather from '../ProjectIMG/Wheather.png';
 import Elearning from '../ProjectIMG/E-Learning.jpg';
-import Taskmanagment from '../ProjectIMG/TaskMenagment.png;'
+
 
 // Add your project data here
 const projectsData = [
@@ -50,7 +50,7 @@ const projectsData = [
   codeLink: '#',
 },
   {
-    image: Taskmanagment,
+    image: '',
     title: 'Task Management App',
     description: 'A simple and intuitive task management application that allows users to create, update, and delete tasks. Built with vanilla JavaScript.',
     tags: ['HTML5', 'CSS3', 'JavaScript'],
