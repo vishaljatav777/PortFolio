@@ -4,6 +4,8 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import calculatorImage from '../ProjectIMG/calculater.png';
 import Portfolio from '../ProjectIMG/portfolio.png';
 import Wheather from '../ProjectIMG/Wheather.png';
+import Elearning from '../ProjectIMG/E-Learning.jpg';
+import Taskmanagment from '../ProjectIMG/TaskMenagment.png;'
 
 // Add your project data here
 const projectsData = [
@@ -40,7 +42,7 @@ const projectsData = [
   codeLink: '#',
 },
 {
-  image: '',
+  image: Elearning,
   title: 'E-learning Platform',
   description: 'A full-stack e-learning platform developed as a group project with React.js and MySQL, featuring course management, user authentication, and backend APIs.',
   tags: ['React.js', 'MySQL', 'Node.js', 'Express.js'],
@@ -48,7 +50,7 @@ const projectsData = [
   codeLink: '#',
 },
   {
-    image: '',
+    image: Taskmanagment,
     title: 'Task Management App',
     description: 'A simple and intuitive task management application that allows users to create, update, and delete tasks. Built with vanilla JavaScript.',
     tags: ['HTML5', 'CSS3', 'JavaScript'],
