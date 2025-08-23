@@ -3,6 +3,7 @@ import './Project.css';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import calculatorImage from '../ProjectIMG/calculater.png';
 import Portfolio from '../ProjectIMG/portfolio.png';
+import Wheather from '../ProjectIMG/Wheather.png';
 
 // Add your project data here
 const projectsData = [
@@ -23,7 +24,7 @@ const projectsData = [
     codeLink: 'https://github.com/vishaljatav777/PortFolio.git',
   },
   {
-  image: '',
+  image: Wheather,
   title: 'React Weather App',
   description: 'A dynamic weather application built with React.js, integrating a weather API to display real-time temperature and conditions with responsive design.',
   tags: ['React.js', 'API', 'JavaScript'],
