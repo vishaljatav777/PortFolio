@@ -19,8 +19,8 @@ const projectsData = [
     title: 'Portfolio Website',
     description: 'A personal portfolio website to showcase my skills and projects, built with React. Designed to be clean, modern, and fully responsive.',
     tags: ['React', 'CSS3', 'JavaScript'],
-    liveLink: '#',
-    codeLink: '#',
+    liveLink: 'https://port-folio-pi-six.vercel.app/',
+    codeLink: 'https://github.com/vishaljatav777/PortFolio.git',
   },
   {
   image: '',
@@ -28,7 +28,7 @@ const projectsData = [
   description: 'A dynamic weather application built with React.js, integrating a weather API to display real-time temperature and conditions with responsive design.',
   tags: ['React.js', 'API', 'JavaScript'],
   liveLink: '#',
-  codeLink: '#',
+  codeLink: 'https://github.com/vishaljatav777/Weather-App.git',
 },
 {
   image: '',
