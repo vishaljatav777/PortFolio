@@ -1,31 +1,33 @@
 import React from 'react';
 import './Achievement.css';
-import { FaCertificate, FaTrophy, FaCode } from 'react-icons/fa'; // Example icons
+import { FaCertificate, FaTrophy, FaCode, FaCoins } from 'react-icons/fa'; // Example icons
 
 // You can easily update your achievements here
 const achievementsData = [
   {
-  year: '2024',
-  title: 'Flipkart GRiD 6.0',
-  issuer: 'Flipkart',
-  description: 'Earned a certificate for participation in Flipkart GRiD 6.0, showcasing problem-solving and technical skills in real-world challenges.',
-  icon: <FaCertificate />,
-  link: 'https://unstop.com/certificate-preview/9d352bce-07b9-4d33-89b4-1573c98f8db7'
+    year: '2024',
+    title: 'Flipkart GRiD 6.0',
+    issuer: 'Flipkart',
+    description: 'Earned a certificate for participation in Flipkart GRiD 6.0, showcasing problem-solving and technical skills in real-world challenges.',
+    icon: <FaCertificate />,
+    link: 'https://unstop.com/certificate-preview/9d352bce-07b9-4d33-89b4-1573c98f8db7'
   },
-  // {
-  //   year: '2024',
-  //   title: '1st Place - Smart India Hackathon',
-  //   issuer: 'Ministry of Education',
-  //   description: 'Led a team of four to develop a solution for urban waste management, winning the top prize in the sustainability category.',
-  //   icon: <FaTrophy />,
-  // },
-  // {
-  //   year: '2024',
-  //   title: 'Open Source Contributor',
-  //   issuer: 'GitHub',
-  //   description: 'Contributed multiple pull requests to a popular open-source UI library, focusing on accessibility improvements.',
-  //   icon: <FaCode />,
-  // },
+  {
+    year: '2025',
+    title: 'Tough Tongue AI',
+    issuer: 'Tough Tongue',
+    description: 'This certificate provided by Tough Tongue AI is proof of the sheer grit, hard work, & dedication of the participant through which he/she has participated in the Consulting Quiz – Tough Tongue AI (Best Mock Interview Platform). Unstop congratulates them on achieving yet another milestone.',
+    icon: <FaCertificate />,
+    link: 'https://unstop.com/certificate-preview/1fd265e8-ee35-429a-8af0-b1dd6b0727ef'
+  },
+  {
+    year: '2025',
+    title: 'Google Cloud Arcade',
+    issuer: 'Google cloud',
+    description: 'I am getting a multiple badges from google cloud Arcade.',
+    icon: <FaCoins />, // <-- FIX: Replaced the incorrect FaBedges icon
+    link: 'https://www.cloudskillsboost.google/public_profiles/1d6231f9-0092-4ce0-930c-16e553e6dbaa'
+  },
 ];
 
 function Achievement() {
@@ -39,7 +41,6 @@ function Achievement() {
               <div className="timeline-dot"></div>
             </div>
             
-            {/* WRAP THE CARD WITH THE LINK TAG */}
             <a href={item.link} target="_blank" rel="noopener noreferrer" className="timeline-link">
               <div className="timeline-content-card">
                 <div className="timeline-header">
