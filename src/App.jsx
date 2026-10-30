@@ -1,34 +1,33 @@
+import React from 'react';
+import { Header } from './components/layout/Header';
+import { Footer } from './components/layout/Footer';
+import { Hero } from './components/sections/Hero';
+import { About } from './components/sections/About';
+import { Education } from './components/sections/Education';
+import { Skills } from './components/sections/Skills';
+import { Projects } from './components/sections/Projects';
+import { Achievements } from './components/sections/Achievements';
+import { Contact } from './components/sections/Contact';
+import { ScrollToTopButton } from './components/sections/ScrollToTopButton';
 import './App.css';
-import Heder from './components/Heder';
-import Home from './pages/Home';
-import About from './pages/About';
-import Education from './pages/Education';
-import Skill from './pages/Skill';
-import Project from './pages/Project';
-// import Testimonials from './pages/Testimonials';
-import Achievement from './pages/Achievement';
-// import Experience from './pages/Experience';
-import Contact from './pages/Contact';
-import Footer from './components/Footer';
-import ScrollToTopButton from './pages/ScrollToTopButton';
 
-function App() {
+export function App() {
   return (
-    <>
-      <Heder/>
-      <Home/>
-      <About/>
-      <Education/>
-      <Skill/>
-      <Project/>
-      {/* <Testimonials/> */}
-      <Achievement/>
-      {/* <Experience/> */}
-      <Contact/>
-      <Footer/>
-      <ScrollToTopButton/>
-    </>
-  )
+    <div className="portfolio-app">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Education />
+        <Skills />
+        <Projects />
+        <Achievements />
+        <Contact />
+      </main>
+      <Footer />
+      <ScrollToTopButton />
+    </div>
+  );
 }
 
-export default App
+export default App;

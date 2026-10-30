@@ -1,0 +1,91 @@
+.skills-section {
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.skill-category-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-md);
+}
+
+.category-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(0, 170, 255, 0.2);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 0.6rem 1rem;
+  transition: all var(--transition-fast);
+}
+
+.skill-item:hover {
+  border-color: var(--accent-color);
+  background-color: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.skill-icon-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.skill-name {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Specific Skill Icon Accent Colors */
+.skill-icon.c { color: #A8B9CC; }
+.skill-icon.java { color: #f89820; }
+.skill-icon.js { color: #f7df1e; }
+.skill-icon.typescript { color: #3178c6; }
+.skill-icon.html { color: #e34f26; }
+.skill-icon.css { color: #1572b6; }
+.skill-icon.tailwind { color: #06b6d4; }
+.skill-icon.react { color: #61dafb; }
+.skill-icon.node { color: #339933; }
+.skill-icon.express { color: #ffffff; }
+.skill-icon.mongo { color: #47a248; }
+.skill-icon.mysql { color: #4479a1; }
+.skill-icon.git { color: #f05032; }
+.skill-icon.github { color: #ffffff; }
+.skill-icon.docker { color: #2496ed; }
+.skill-icon.restapi { color: #00aaff; }
+.skill-icon.ds { color: #ffb703; }
+.skill-icon.oop { color: #9d4edd; }
+
