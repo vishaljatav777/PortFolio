@@ -3,7 +3,6 @@
  */
 
 export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-export const FORMSPREE_FALLBACK_URL = import.meta.env.VITE_FORMSPREE_URL || 'https://formspree.io/f/xwpqjpaw';
 export const RESUME_URL = import.meta.env.VITE_RESUME_URL || '/Resume.pdf';
 
 export const NAV_LINKS = [
@@ -15,4 +14,3 @@ export const NAV_LINKS = [
   { label: 'Achievements', href: '#achievements' },
   { label: 'Contact', href: '#contact' },
 ];
-

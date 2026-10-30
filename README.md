@@ -94,7 +94,6 @@ cp .env.example .env
 ```env
 # Frontend (Client-side)
 VITE_API_URL=http://localhost:5000/api
-VITE_FORMSPREE_URL=https://formspree.io/f/xwpqjpaw
 VITE_RESUME_URL=/Resume.pdf
 
 # Backend (Server-side)

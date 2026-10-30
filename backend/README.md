@@ -142,3 +142,4 @@ Validates contact submissions, logs/persists them, and optionally sends an email
   "message": "Please provide a valid email address."
 }
 ```
+
