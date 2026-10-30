@@ -1,13 +1,54 @@
-# Portfolio REST API Documentation
+# Portfolio REST API Backend
+
+Node.js + Express REST API backend for Vishal Jatav's Portfolio.
 
 Base URL: `http://localhost:5000/api` (Development)
 
 ---
 
-## 1. Health Check
+## 🚀 Getting Started
 
-### `GET /api/health`
-Returns the operational health and uptime status of the backend API.
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Environment Variables
+Create a `.env` file in the project root or inside `backend/.env` based on `.env.example`:
+```env
+PORT=5000
+NODE_ENV=development
+CORS_ORIGIN=http://localhost:5173,https://port-folio-pi-six.vercel.app
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100
+
+# Optional Database & SMTP
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.example.mongodb.net/portfolio
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your_email@gmail.com
+SMTP_PASS=your_app_specific_password
+CONTACT_EMAIL_TO=vishal.jatav.it@gmail.com
+```
+
+### 3. Run Development Server
+```bash
+npm run dev
+```
+
+### 4. Seed Database (Optional)
+```bash
+npm run seed
+```
+
+---
+
+## 📡 REST API Endpoints
+
+### 1. Health Check
+`GET /api/health`
+
+Returns server status, uptime, and database connectivity.
 
 **Response (200 OK):**
 ```json
@@ -23,10 +64,10 @@ Returns the operational health and uptime status of the backend API.
 
 ---
 
-## 2. Projects
+### 2. Projects API
 
-### `GET /api/projects`
-Retrieves all portfolio projects, sorted by display order.
+#### `GET /api/projects`
+Retrieves all portfolio projects (from MongoDB if connected, otherwise fallback default projects).
 
 **Response (200 OK):**
 ```json
@@ -48,8 +89,8 @@ Retrieves all portfolio projects, sorted by display order.
 }
 ```
 
-### `GET /api/projects/:id`
-Retrieves a single project by its unique slug ID.
+#### `GET /api/projects/:id`
+Retrieves a specific project by its ID slug.
 
 **Response (200 OK):**
 ```json
@@ -59,19 +100,17 @@ Retrieves a single project by its unique slug ID.
     "id": "calculator",
     "title": "Simple Calculator",
     "description": "...",
-    "tags": ["HTML", "CSS", "JavaScript"],
-    "liveLink": "https://vishaljatav777.github.io/Calculator/",
-    "codeLink": "https://github.com/vishaljatav777/Calculator"
+    "tags": ["HTML", "CSS", "JavaScript"]
   }
 }
 ```
 
 ---
 
-## 3. Contact Form Submission
+### 3. Contact Form Submission
+`POST /api/contact`
 
-### `POST /api/contact`
-Submits an inquiry from the portfolio contact form. Validates inputs, saves the contact inquiry, and dispatches an email notification.
+Validates contact submissions, logs/persists them, and optionally sends an email notification via Nodemailer SMTP.
 
 **Rate Limit:** 10 requests per 15 minutes per IP.
 

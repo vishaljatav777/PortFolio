@@ -11,10 +11,10 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
-dotenv.config({ path: path.resolve(__dirname, '../backend/.env') });
 
-import { INITIAL_PROJECTS } from '../shared/constants/projects.js';
+import { INITIAL_PROJECTS } from '../src/constants/projects.js';
 
 const projectSchema = new mongoose.Schema(
   {

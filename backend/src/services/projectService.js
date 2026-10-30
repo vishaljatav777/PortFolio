@@ -1,6 +1,6 @@
 import { Project } from '../models/Project.js';
 import { isDbConnected } from '../config/db.js';
-import { INITIAL_PROJECTS } from '../../../shared/constants/projects.js';
+import { INITIAL_PROJECTS } from '../constants/projects.js';
 import { logger } from '../utils/logger.js';
 
 export async function getAllProjects() {
@@ -31,4 +31,3 @@ export async function getProjectById(id) {
   const found = INITIAL_PROJECTS.find((p) => p.id === id);
   return found || null;
 }
-

@@ -1,5 +1,5 @@
 /**
- * Default Project Data Shared Across Applications
+ * Default Project Data for Backend Services & Fallback
  */
 
 export const INITIAL_PROJECTS = [
@@ -64,4 +64,3 @@ export const INITIAL_PROJECTS = [
     order: 6,
   },
 ];
-

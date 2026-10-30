@@ -39,11 +39,13 @@ portfolio/
 │   │   └── main.jsx
 │   ├── index.html                # SEO & OpenGraph metadata
 │   ├── package.json
+│   ├── README.md
 │   └── vite.config.js
 │
 ├── backend/                      # ⚙️ Server Application (Node.js, Express REST API)
 │   ├── src/
 │   │   ├── config/               # Database (db.js) & environment (env.js)
+│   │   ├── constants/            # Project data & system constants
 │   │   ├── controllers/          # HTTP request handlers (health, projects, contact)
 │   │   ├── routes/               # API route definitions
 │   │   ├── middleware/           # Security (Helmet, CORS), rate limiting, error handler
@@ -53,21 +55,14 @@ portfolio/
 │   │   ├── utils/                # Custom AppError and structured logger
 │   │   ├── app.js                # Express application setup
 │   │   └── server.js             # HTTP server entry point
+│   ├── scripts/
+│   │   └── seedProjects.js       # Database seeder utility
 │   ├── package.json
-│   └── README.md
-│
-├── shared/                       # 📦 Shared constants and initial data
-│   └── constants/                # Project seed data
-│
-├── docs/                         # 📖 Technical documentation
-│   └── API.md                    # REST API endpoints and schema
-│
-├── scripts/                      # 🛠 Utility scripts
-│   └── seedProjects.js           # Database seeder
+│   └── README.md                 # Backend & REST API documentation
 │
 ├── .env.example                  # Consolidated environment variable template
 ├── .gitignore                    # Comprehensive Git ignore rules
-├── package.json                  # Root runner scripts
+├── package.json                  # Root monorepo runner scripts
 ├── vercel.json                   # Zero-config Vercel build specification
 ├── LICENSE                       # Apache License 2.0
 └── README.md                     # Project documentation
@@ -84,7 +79,7 @@ portfolio/
 | `GET` | `/api/projects/:id` | Retrieves a single project by ID |
 | `POST` | `/api/contact` | Validates message, stores contact inquiry, and dispatches email |
 
-See [`docs/API.md`](docs/API.md) for full request/response schemas.
+See [`backend/README.md`](backend/README.md) for full request/response schemas and curl examples.
 
 ---
 
@@ -120,23 +115,20 @@ CONTACT_EMAIL_TO=vishal.jatav.it@gmail.com
 
 ---
 
-## 💻 Local Development
+## 🛠️ Local Development
 
 ### 1. Install Dependencies
 ```bash
-# Frontend
 npm --prefix frontend install
-
-# Backend
 npm --prefix backend install
 ```
 
-### 2. Run Applications
+### 2. Start Applications
 ```bash
-# Start frontend (http://localhost:5173)
+# Start frontend (Vite dev server)
 npm run dev
 
-# Start backend (http://localhost:5000)
+# Start backend (Express dev server with --watch)
 npm run dev:backend
 ```
 
@@ -147,13 +139,6 @@ npm run build
 
 ---
 
-## 🚢 Deployment
-
-- **Frontend on Vercel:** Handled automatically via `vercel.json` pointing to `frontend/dist`.
-- **Backend on Render / Railway / Fly.io:** Set root directory to `backend`, run `npm install`, and start command `npm start`.
-
----
-
 ## 📄 License
 
-Licensed under the [Apache License, Version 2.0](LICENSE).
+This project is licensed under the [Apache License 2.0](LICENSE).
