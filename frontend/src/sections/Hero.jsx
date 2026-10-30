@@ -1,11 +1,10 @@
 import React from 'react';
-import profilePic from '../../assets/images/profile-picture.jpg';
-import { Button } from '../common/Button';
+import profilePic from '../assets/images/profile-picture.jpg';
+import { Button } from '../components/common/Button';
+import { RESUME_URL } from '../constants';
 import './Hero.css';
 
 export function Hero() {
-  const resumeUrl = import.meta.env.VITE_RESUME_URL || '/Resume.pdf';
-
   return (
     <section id="home" className="hero-section">
       <div className="hero-container container">
@@ -24,7 +23,7 @@ export function Hero() {
             <Button variant="primary" href="#projects">
               View My Work
             </Button>
-            <Button variant="secondary" href={resumeUrl} download="Vishal_Jatav_Resume.pdf">
+            <Button variant="secondary" href={RESUME_URL} download="Vishal_Jatav_Resume.pdf">
               Download CV
             </Button>
           </div>
@@ -41,4 +40,3 @@ export function Hero() {
 }
 
 export default Hero;
-

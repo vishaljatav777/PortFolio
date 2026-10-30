@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import { contactInfo } from '../../data/socialLinks';
-import { Button } from '../common/Button';
+import { contactInfo } from '../data/socialLinks';
+import { Button } from '../components/common/Button';
+import { submitContactMessage } from '../services/contactService';
+import { validateEmail } from '../utils/helpers';
 import './Contact.css';
 
 export function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
   const [feedbackMessage, setFeedbackMessage] = useState('');
-
-  const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_URL || 'https://formspree.io/f/xwpqjpaw';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,32 +18,31 @@ export function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setStatus('error');
+      setFeedbackMessage('Please fill in all required fields.');
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      setStatus('error');
+      setFeedbackMessage('Please provide a valid email address.');
+      return;
+    }
+
     setStatus('sending');
     setFeedbackMessage('');
 
     try {
-      const response = await fetch(formspreeEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setFeedbackMessage('Thank you! Your message has been sent successfully. I will get back to you soon.');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        const errorData = await response.json().catch(() => ({}));
-        setStatus('error');
-        setFeedbackMessage(errorData?.error || 'Oops! There was a problem submitting your form. Please try again.');
-      }
+      const result = await submitContactMessage(formData);
+      setStatus('success');
+      setFeedbackMessage(result.message);
+      setFormData({ name: '', email: '', message: '' });
     } catch (err) {
       console.error('Contact form submission error:', err);
       setStatus('error');
-      setFeedbackMessage('Network error: Unable to send message. Please check your connection or email me directly.');
+      setFeedbackMessage(err.message || 'Oops! There was a problem submitting your message. Please try again.');
     }
   };
 
@@ -85,7 +84,7 @@ export function Contact() {
           </div>
 
           <div className="contact-form-wrapper">
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form onSubmit={handleSubmit} className="contact-form" noValidate>
               {status === 'success' && (
                 <div className="alert alert-success" role="alert">
                   {feedbackMessage}
@@ -157,4 +156,3 @@ export function Contact() {
 }
 
 export default Contact;
-

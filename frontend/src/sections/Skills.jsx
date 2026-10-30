@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { skillCategories } from '../../data/skillsData';
+import { skillCategories } from '../data/skillsData';
 import './Skills.css';
 
 export function Skills() {

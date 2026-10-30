@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutPic from '../../assets/images/about-picture.png';
+import aboutPic from '../assets/images/about-picture.png';
 import './About.css';
 
 export function About() {
@@ -31,4 +31,3 @@ export function About() {
 }
 
 export default About;
-

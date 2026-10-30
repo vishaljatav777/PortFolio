@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaGraduationCap } from 'react-icons/fa';
-import { educationData } from '../../data/educationData';
+import { educationData } from '../data/educationData';
 import './Education.css';
 
 export function Education() {
@@ -37,4 +37,3 @@ export function Education() {
 }
 
 export default Education;
-

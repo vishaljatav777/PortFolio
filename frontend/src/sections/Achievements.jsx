@@ -1,5 +1,5 @@
 import React from 'react';
-import { achievementsData } from '../../data/achievementsData';
+import { achievementsData } from '../data/achievementsData';
 import './Achievements.css';
 
 export function Achievements() {
